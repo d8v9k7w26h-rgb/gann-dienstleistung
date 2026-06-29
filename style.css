@@ -147,3 +147,5 @@ img {
     object-fit: cover !important;
   }
 }
+
+@media(max-width:768px){.hero{padding:24px 16px!important}.hero-grid{grid-template-columns:1fr!important;gap:18px!important}.hero-image img{max-height:340px;object-fit:cover}.hero h1{font-size:2.2rem!important;line-height:1.1}.cta-row{flex-direction:column!important}.projects{grid-template-columns:1fr!important}}
