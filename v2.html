@@ -3,110 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GANN Website 2.0 Vorschau</title>
+  <title>GANN Vorschau</title>
+
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Arial,Helvetica,sans-serif;background:#f4f4f4;color:#111;line-height:1.6}
+    body{font-family:Arial,Helvetica,sans-serif;background:#f3f3f3;color:#111;line-height:1.55}
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
 
-    header{position:sticky;top:0;z-index:99;background:#050505;color:#fff;border-bottom:1px solid #222}
-    .nav{max-width:1250px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .logo{display:flex;align-items:center;gap:12px;font-weight:900;font-size:24px;letter-spacing:1px}
-    .logo img{height:48px}
-    .navlinks{display:flex;gap:24px;font-size:14px;font-weight:800;text-transform:uppercase}
+    header{background:#050505;color:#fff;position:sticky;top:0;z-index:100}
+    .nav{max-width:1250px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .logo img{height:54px}
+    .navlinks{display:flex;gap:24px;font-weight:800;text-transform:uppercase;font-size:14px}
     .navcta{display:flex;gap:10px}
     .btn{padding:12px 18px;border-radius:999px;font-weight:900}
     .btn.white{background:#fff;color:#000}
-    .btn.green{background:#14a84a;color:#fff}
+    .btn.green{background:#17a34a;color:#fff}
 
-    .hero{background:#050505;color:#fff;min-height:88vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;overflow:hidden}
+    .hero{background:#050505;color:#fff;display:grid;grid-template-columns:1fr 1fr;min-height:88vh;align-items:center}
     .hero-text{padding:70px clamp(24px,6vw,90px)}
-    .eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.22em;color:#aaa;font-weight:900;margin-bottom:18px}
-    h1{font-size:clamp(42px,6vw,84px);line-height:.98;text-transform:uppercase;letter-spacing:-2px;margin-bottom:24px}
-    .hero-text p{font-size:clamp(18px,2vw,24px);color:#ddd;max-width:680px;margin-bottom:28px}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
-    .bigbtn{padding:18px 26px;border-radius:16px;font-size:18px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;min-width:210px}
-    .bigbtn.dark{background:#fff;color:#000}
-    .bigbtn.green{background:#14a84a;color:#fff}
-    .checks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:720px}
-    .checks span{border:1px solid #333;background:#111;border-radius:14px;padding:13px 14px;font-weight:800;color:#eee}
+    .label{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#aaa;font-weight:900;margin-bottom:18px}
+    h1{font-size:clamp(44px,6vw,86px);line-height:.98;text-transform:uppercase;letter-spacing:-2px;margin-bottom:24px}
+    .sub{font-size:clamp(20px,2.4vw,30px);font-weight:800;margin-bottom:22px}
+    .hero p{font-size:19px;color:#ddd;max-width:680px;margin-bottom:28px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+    .bigbtn{padding:18px 26px;border-radius:16px;font-size:18px;font-weight:900;display:inline-flex;justify-content:center;align-items:center;min-width:210px}
+    .bigbtn.light{background:#fff;color:#000}
+    .bigbtn.green{background:#17a34a;color:#fff}
 
-    .hero-photo{height:100%;min-height:650px;position:relative}
-    .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(10%) contrast(1.05)}
-    .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.35) 40%,transparent 100%)}
+    .checks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:760px}
+    .checks span{background:#111;border:1px solid #333;border-radius:14px;padding:14px;font-weight:800}
 
-    .strip{background:#fff;padding:20px;border-bottom:1px solid #ddd}
-    .strip-inner{max-width:1250px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center}
-    .strip div{background:#f4f4f4;border-radius:16px;padding:18px;font-weight:900}
-    .strip small{display:block;color:#666;font-weight:500;margin-top:4px}
+    .hero-img{height:100%;min-height:650px;position:relative}
+    .hero-img img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .hero-img:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.45) 42%,transparent)}
+
+    .quick{background:#fff;border-bottom:1px solid #ddd}
+    .quick-inner{max-width:1250px;margin:auto;padding:22px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .quick div{background:#f2f2f2;padding:20px;border-radius:18px;font-weight:900;text-align:center}
+    .quick small{display:block;color:#666;font-weight:500;margin-top:4px}
 
     main{max-width:1250px;margin:auto;padding:54px 22px}
-    section{margin-bottom:34px}
-    .section-head{margin-bottom:24px}
-    .section-head h2{font-size:clamp(34px,5vw,58px);line-height:1;text-transform:uppercase}
-    .section-head p{font-size:19px;color:#555;max-width:760px;margin-top:12px}
+    section{margin-bottom:36px}
+    .head{margin-bottom:24px}
+    .head h2{font-size:clamp(34px,5vw,58px);text-transform:uppercase;line-height:1}
+    .head p{font-size:19px;color:#555;max-width:760px;margin-top:12px}
 
-    .feature-project{background:#050505;color:#fff;border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1.25fr .75fr}
-    .feature-project img{width:100%;height:100%;object-fit:cover}
+    .feature{background:#050505;color:#fff;border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1.25fr .75fr}
+    .feature img{width:100%;height:100%;object-fit:cover}
     .feature-info{padding:38px;display:flex;flex-direction:column;justify-content:center}
-    .feature-info h3{font-size:38px;line-height:1.05;margin-bottom:16px;text-transform:uppercase}
-    .feature-info p{color:#ccc;font-size:18px;margin-bottom:22px}
-    .tag{display:inline-block;background:#fff;color:#000;border-radius:999px;padding:8px 13px;font-weight:900;font-size:13px;text-transform:uppercase;margin-bottom:18px}
+    .tag{display:inline-block;background:#fff;color:#000;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:900;text-transform:uppercase;margin-bottom:18px}
+    .feature h3{font-size:38px;line-height:1.05;text-transform:uppercase;margin-bottom:16px}
+    .feature p{font-size:18px;color:#ccc;margin-bottom:22px}
 
     .services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .service{background:#fff;border-radius:24px;padding:26px;min-height:220px;border:1px solid #ddd}
+    .service{background:#fff;border:1px solid #ddd;border-radius:24px;padding:26px;min-height:220px}
     .service .icon{font-size:42px;margin-bottom:14px}
-    .service h3{font-size:24px;line-height:1.1;margin-bottom:10px;text-transform:uppercase}
+    .service h3{font-size:24px;text-transform:uppercase;line-height:1.1;margin-bottom:10px}
     .service p{color:#555}
 
     .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-    .project{background:#fff;border-radius:24px;overflow:hidden;border:1px solid #ddd}
+    .project{background:#fff;border:1px solid #ddd;border-radius:24px;overflow:hidden}
     .project img{width:100%;height:360px;object-fit:cover}
     .project div{padding:20px}
     .project span{font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:900;color:#666}
     .project h3{font-size:25px;margin-top:6px}
 
-    .about{background:#fff;border-radius:28px;padding:34px;display:grid;grid-template-columns:.8fr 1.2fr;gap:34px;align-items:center;border:1px solid #ddd}
+    .about,.contact{background:#fff;border:1px solid #ddd;border-radius:28px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
     .about img{border-radius:24px;max-height:520px;width:100%;object-fit:cover}
-    .about h2{font-size:48px;line-height:1;text-transform:uppercase;margin-bottom:18px}
-    .about p{font-size:19px;color:#444;margin-bottom:16px}
+    .about h2,.contact h2{font-size:48px;text-transform:uppercase;line-height:1;margin-bottom:18px}
+    .about p,.contact p{font-size:19px;color:#444;margin-bottom:16px}
 
-    .contact{background:#050505;color:#fff;border-radius:28px;padding:42px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
-    .contact h2{font-size:52px;line-height:1;text-transform:uppercase;margin-bottom:16px}
-    .contact p{color:#ccc;font-size:19px}
+    .contact{background:#050505;color:#fff}
+    .contact p{color:#ccc}
     .contact-buttons{display:grid;gap:14px}
 
-    footer{background:#050505;color:#aaa;text-align:center;padding:36px 20px}
+    footer{background:#050505;color:#aaa;text-align:center;padding:38px 20px}
     footer a{color:#fff}
 
     .float{position:fixed;right:16px;bottom:16px;z-index:100;display:flex;flex-direction:column;gap:10px}
     .float a{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#111;color:#fff;font-size:24px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
-    .float .wa{background:#14a84a}
+    .float .wa{background:#17a34a}
 
     @media(max-width:900px){
       .navlinks{display:none}
       .hero{grid-template-columns:1fr}
-      .hero-photo{min-height:480px;order:-1}
-      .hero-photo:after{background:linear-gradient(0deg,#050505 0%,transparent 55%)}
-      .checks,.strip-inner,.services,.gallery,.feature-project,.about,.contact{grid-template-columns:1fr}
-      .feature-project img{height:auto}
+      .hero-img{order:-1;min-height:440px}
+      .hero-img:after{background:linear-gradient(0deg,#050505 0%,transparent 55%)}
+      .checks,.quick-inner,.services,.gallery,.feature,.about,.contact{grid-template-columns:1fr}
     }
 
     @media(max-width:600px){
       .nav{padding:10px 14px}
-      .logo img{height:40px}
-      .logo span{display:none}
-      .navcta{gap:8px}
+      .logo img{height:44px}
       .btn{padding:10px 12px;font-size:13px}
       .hero-text{padding:34px 18px 42px}
-      h1{font-size:39px}
-      .hero-photo{min-height:390px}
+      h1{font-size:40px}
+      .sub{font-size:22px}
+      .hero-img{min-height:390px}
       main{padding:34px 14px}
+      .feature-info,.about,.contact{padding:24px}
       .project img{height:auto}
-      .contact,.about,.feature-info{padding:24px}
-      .contact h2,.about h2{font-size:36px}
+      .about h2,.contact h2{font-size:36px}
     }
   </style>
 </head>
@@ -117,13 +115,11 @@
   <nav class="nav">
     <a class="logo" href="#start">
       <img src="assets/logo-dark.png" alt="GANN Logo">
-      <span>GANN</span>
     </a>
 
     <div class="navlinks">
       <a href="#leistungen">Leistungen</a>
       <a href="#projekte">Projekte</a>
-      <a href="#ueber">Über GANN</a>
       <a href="#kontakt">Kontakt</a>
     </div>
 
@@ -136,60 +132,67 @@
 
 <section class="hero" id="start">
   <div class="hero-text">
-    <div class="eyebrow">Bad Sobernheim & Umgebung</div>
-    <h1>Baudienstleistung & Hausmeisterservice</h1>
+    <div class="label">Bad Sobernheim & Umgebung</div>
+
+    <h1>Alles rund ums Haus.</h1>
+
+    <div class="sub">
+      Sauber gearbeitet. Professionell umgesetzt.
+    </div>
+
     <p>
-      Zuverlässige Arbeiten rund um Ihre Immobilie. Sauber, persönlich und kompetent –
-      von Kleinreparaturen bis Entrümpelung, Gartenpflege und Objektbetreuung.
+      GANN Baudienstleistung & Hausmeisterservice ist Ihr Ansprechpartner
+      für Hausmeisterservice, Kleinreparaturen, Entrümpelung, Gartenpflege
+      und Arbeiten rund um Ihre Immobilie.
     </p>
 
-    <div class="hero-actions">
-      <a class="bigbtn dark" href="tel:+4917670728179">📞 Jetzt anrufen</a>
+    <div class="actions">
+      <a class="bigbtn light" href="tel:+4917670728179">📞 Jetzt anrufen</a>
       <a class="bigbtn green" href="https://wa.me/4917670728179">💬 WhatsApp</a>
     </div>
 
     <div class="checks">
-      <span>✓ Saubere Arbeit</span>
-      <span>✓ Faire Preise</span>
-      <span>✓ Schnelle Rückmeldung</span>
+      <span>✓ Hausmeisterservice</span>
+      <span>✓ Baudienstleistung</span>
+      <span>✓ Entrümpelung</span>
     </div>
   </div>
 
-  <div class="hero-photo">
+  <div class="hero-img">
     <img src="assets/viktor-gann.jpg" alt="Viktor Gann">
   </div>
 </section>
 
-<div class="strip">
-  <div class="strip-inner">
-    <div>Hausmeisterservice<small>regelmäßig & zuverlässig</small></div>
-    <div>Kleinreparaturen<small>schnell erledigt</small></div>
-    <div>Entrümpelungen<small>sauber & organisiert</small></div>
-    <div>Gartenpflege<small>rund ums Haus</small></div>
+<div class="quick">
+  <div class="quick-inner">
+    <div>Saubere Arbeit<small>ordentlich & zuverlässig</small></div>
+    <div>Faire Preise<small>klare Absprachen</small></div>
+    <div>Schnell erreichbar<small>Telefon & WhatsApp</small></div>
+    <div>Regional<small>Bad Sobernheim</small></div>
   </div>
 </div>
 
 <main>
 
 <section id="projekte">
-  <div class="section-head">
+  <div class="head">
     <h2>Echte Ergebnisse</h2>
-    <p>Vorher-/Nachher-Projekte zeigen besser als jedes Versprechen, wie sauber gearbeitet wird.</p>
+    <p>Vorher-/Nachher-Arbeiten zeigen direkt, was GANN leistet.</p>
   </div>
 
-  <div class="feature-project">
-    <img src="assets/terrasse-pflaster-neu.jpg" alt="Terrassen und Pflasterarbeiten vorher nachher">
+  <div class="feature">
+    <img src="assets/terrasse-pflaster-neu.jpg" alt="Terrasse Pflasterarbeiten vorher nachher">
     <div class="feature-info">
       <span class="tag">Vorher / Nachher</span>
       <h3>Terrassen- & Pflasterarbeiten</h3>
-      <p>Ordentliche Ausführung, saubere Fläche und ein Ergebnis, das sich sehen lassen kann.</p>
-      <a class="bigbtn dark" href="#kontakt">Projekt anfragen</a>
+      <p>Saubere Umsetzung rund ums Haus – sichtbar, ordentlich und professionell.</p>
+      <a class="bigbtn light" href="#kontakt">Projekt anfragen</a>
     </div>
   </div>
 </section>
 
 <section id="leistungen">
-  <div class="section-head">
+  <div class="head">
     <h2>Leistungen</h2>
     <p>Ein Ansprechpartner für viele Arbeiten rund um Haus, Hof und Immobilie.</p>
   </div>
@@ -198,19 +201,19 @@
     <article class="service">
       <div class="icon">🏠</div>
       <h3>Hausmeisterservice</h3>
-      <p>Betreuung von Immobilien, Außenanlagen und Gemeinschaftsflächen.</p>
+      <p>Regelmäßige Betreuung von Immobilien und Außenanlagen.</p>
     </article>
 
     <article class="service">
       <div class="icon">🔧</div>
       <h3>Kleinreparaturen</h3>
-      <p>Praktische Hilfe bei Reparaturen und Instandhaltung.</p>
+      <p>Kleine Reparaturen und Instandhaltung zuverlässig erledigt.</p>
     </article>
 
     <article class="service">
       <div class="icon">📦</div>
       <h3>Entrümpelung</h3>
-      <p>Keller, Garage, Wohnung oder Objekt – sauber und zuverlässig.</p>
+      <p>Keller, Garage, Wohnung oder Objekt sauber und organisiert.</p>
     </article>
 
     <article class="service">
@@ -222,53 +225,52 @@
 </section>
 
 <section>
-  <div class="section-head">
+  <div class="head">
     <h2>Weitere Arbeiten</h2>
-    <p>Einblicke in verschiedene Projekte von GANN Baudienstleistung & Hausmeisterservice.</p>
+    <p>Auszug aus bisherigen Projekten und Arbeiten.</p>
   </div>
 
   <div class="gallery">
     <article class="project">
-      <img src="assets/terrasse.jpg" alt="Terrassenreinigung vorher nachher">
+      <img src="assets/terrasse.jpg" alt="Terrassenreinigung">
       <div><span>Reinigung</span><h3>Terrassen- & Überdachungsreinigung</h3></div>
     </article>
 
     <article class="project">
-      <img src="assets/innenausbau.jpg" alt="Innenausbau vorher nachher">
+      <img src="assets/innenausbau.jpg" alt="Innenausbau">
       <div><span>Innenbereich</span><h3>Tür- / Innenausbau</h3></div>
     </article>
 
     <article class="project">
-      <img src="assets/sanitaer.jpg" alt="Sanitär Kleinreparatur vorher nachher">
+      <img src="assets/sanitaer.jpg" alt="Sanitär Kleinreparatur">
       <div><span>Kleinreparatur</span><h3>Sanitär / Kleinreparatur</h3></div>
     </article>
 
     <article class="project">
-      <img src="assets/boden.jpg" alt="Bodenarbeiten vorher nachher">
+      <img src="assets/boden.jpg" alt="Bodenarbeiten">
       <div><span>Baudienstleistung</span><h3>Bodenarbeiten</h3></div>
     </article>
   </div>
 </section>
 
-<section class="about" id="ueber">
+<section class="about">
   <img src="assets/viktor-gann.jpg" alt="Viktor Gann">
   <div>
-    <div class="eyebrow">Über GANN</div>
+    <div class="label">Über GANN</div>
     <h2>Persönlich. Direkt. Zuverlässig.</h2>
     <p>
       Mein Name ist Viktor Gann. Mit GANN Baudienstleistung & Hausmeisterservice
       unterstütze ich Privatkunden, Vermieter und Unternehmen in Bad Sobernheim und Umgebung.
     </p>
     <p>
-      Mir sind klare Absprachen, saubere Arbeit und ein respektvoller Umgang mit Ihrem Eigentum wichtig.
+      Wichtig sind mir klare Absprachen, saubere Arbeit und ein respektvoller Umgang mit Ihrem Eigentum.
     </p>
-    <a class="bigbtn dark" href="tel:+4917670728179">Direkt anrufen</a>
   </div>
 </section>
 
 <section class="contact" id="kontakt">
   <div>
-    <div class="eyebrow">Kontakt</div>
+    <div class="label">Kontakt</div>
     <h2>Jetzt anfragen</h2>
     <p>
       Rufen Sie direkt an oder schreiben Sie per WhatsApp.
@@ -277,9 +279,9 @@
   </div>
 
   <div class="contact-buttons">
-    <a class="bigbtn dark" href="tel:+4917670728179">📞 0176 70728179</a>
+    <a class="bigbtn light" href="tel:+4917670728179">📞 0176 70728179</a>
     <a class="bigbtn green" href="https://wa.me/4917670728179">💬 WhatsApp schreiben</a>
-    <a class="bigbtn dark" href="mailto:info@gann-dienstleistung.de">✉ info@gann-dienstleistung.de</a>
+    <a class="bigbtn light" href="mailto:info@gann-dienstleistung.de">✉ info@gann-dienstleistung.de</a>
   </div>
 </section>
 
