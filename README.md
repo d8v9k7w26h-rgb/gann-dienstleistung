@@ -1,1 +1,3 @@
-GANN Website - neue Version
+# GANN Website
+
+Fertige Website-Dateien für GitHub Pages.
