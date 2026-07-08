@@ -1,2 +1,3 @@
-# gann-dienstleistung
-Website von GANN Dienstleistungen
+# GANN Website
+
+Fertige Website-Dateien für GitHub Pages.
