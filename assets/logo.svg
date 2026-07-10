@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
-<rect width="900" height="420" fill="#fff"/>
-<g fill="#111" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
-<text x="450" y="185" font-size="124" font-weight="900">GANN</text>
-<text x="450" y="255" font-size="44" font-weight="700">BAUDIENSTLEISTUNG</text>
-<text x="450" y="315" font-size="44" font-weight="700">&amp; HAUSMEISTERSERVICE</text>
-</g>
-<path d="M350 100 L450 35 L550 100 L520 100 L450 55 L380 100 Z" fill="#111"/>
-</svg>
