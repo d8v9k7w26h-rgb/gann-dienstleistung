@@ -6,6 +6,7 @@
   <title>GANN Baudienstleistung & Hausmeisterservice | Bad Sobernheim</title>
   <meta name="description" content="GANN Baudienstleistung & Hausmeisterservice in Bad Sobernheim: Gebäudereinigung, Hausmeisterservice, Gartenpflege, Baudienstleistungen, Entrümpelungen und Objektpflege.">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -27,7 +28,7 @@
   </header>
 
   <main id="start">
-    <section class="hero">
+    <section class="hero reveal">
       <img class="hero-image" src="assets/hero-garten.jpg" alt="GANN bei der professionellen Gartenpflege">
       <div class="hero-overlay"></div>
 
@@ -44,14 +45,14 @@
       </div>
     </section>
 
-    <section class="trust" aria-label="Vorteile">
+    <section class="trust reveal" aria-label="Vorteile">
       <div><strong>Persönlich</strong><span>Direkter Ansprechpartner</span></div>
       <div><strong>Zuverlässig</strong><span>Klare Absprachen</span></div>
       <div><strong>Regional</strong><span>Bad Sobernheim & Umgebung</span></div>
       <div><strong>Fair</strong><span>Transparente Angebote</span></div>
     </section>
 
-    <section class="section" id="leistungen">
+    <section class="section reveal" id="leistungen">
       <div class="section-head">
         <p class="eyebrow">Unsere Leistungen</p>
         <h2>Ein Ansprechpartner für Ihr Objekt.</h2>
@@ -97,7 +98,7 @@
       </div>
     </section>
 
-    <section class="custom-request">
+    <section class="custom-request reveal">
       <div>
         <p class="eyebrow light">Individuelle Lösungen</p>
         <h2>Ihre Aufgabe ist nicht dabei?</h2>
@@ -109,14 +110,14 @@
       </div>
     </section>
 
-    <section class="section" id="projekte">
+    <section class="section reveal" id="projekte">
       <div class="section-head">
         <p class="eyebrow">Echte Arbeiten</p>
         <h2>Saubere Ergebnisse. Sichtbar umgesetzt.</h2>
       </div>
 
       <div class="project-feature">
-        <img src="assets/terrasse-pflaster.jpg" alt="Terrassen- und Pflasterarbeiten von GANN">
+        <button class="image-button" type="button" data-lightbox="assets/terrasse-pflaster.jpg" aria-label="Bild vergrößern"><img src="assets/terrasse-pflaster.jpg" alt="Terrassen- und Pflasterarbeiten von GANN"></button>
         <div class="project-copy">
           <p class="eyebrow light">Referenz</p>
           <h3>Terrassen- & Pflasterarbeiten</h3>
@@ -127,25 +128,25 @@
 
       <div class="work-grid">
         <article>
-          <img src="assets/bodenarbeiten.jpg" alt="Bodenarbeiten">
+          <button class="image-button" type="button" data-lightbox="assets/bodenarbeiten.jpg" aria-label="Bodenarbeiten vergrößern"><img src="assets/bodenarbeiten.jpg" alt="Bodenarbeiten"></button>
           <div><h3>Bodenarbeiten</h3><p>Saubere Vorbereitung und Ausführung.</p></div>
         </article>
         <article>
-          <img src="assets/tuer-innenausbau.jpg" alt="Tür- und Innenausbau">
+          <button class="image-button" type="button" data-lightbox="assets/tuer-innenausbau.jpg" aria-label="Tür- und Innenausbau vergrößern"><img src="assets/tuer-innenausbau.jpg" alt="Tür- und Innenausbau"></button>
           <div><h3>Tür- & Innenausbau</h3><p>Präzise Montage und Anpassung.</p></div>
         </article>
         <article>
-          <img src="assets/sanitaer.jpg" alt="Sanitär und Reparaturen">
+          <button class="image-button" type="button" data-lightbox="assets/sanitaer.jpg" aria-label="Sanitär und Reparaturen vergrößern"><img src="assets/sanitaer.jpg" alt="Sanitär und Reparaturen"></button>
           <div><h3>Sanitär & Reparaturen</h3><p>Kleine Arbeiten zuverlässig erledigt.</p></div>
         </article>
         <article>
-          <img src="assets/terrassenreinigung.jpg" alt="Terrassenreinigung">
+          <button class="image-button" type="button" data-lightbox="assets/terrassenreinigung.jpg" aria-label="Terrassenreinigung vergrößern"><img src="assets/terrassenreinigung.jpg" alt="Terrassenreinigung"></button>
           <div><h3>Terrassenreinigung</h3><p>Gepflegte Außenflächen mit sichtbarem Ergebnis.</p></div>
         </article>
       </div>
     </section>
 
-    <section class="about" id="ueber">
+    <section class="about reveal" id="ueber">
       <img src="assets/portrait-viktor.jpg" alt="Viktor Gann">
       <div class="about-copy">
         <p class="eyebrow">Über GANN</p>
@@ -161,7 +162,7 @@
       </div>
     </section>
 
-    <section class="contact" id="kontakt">
+    <section class="contact reveal" id="kontakt">
       <div>
         <p class="eyebrow light">Kontakt</p>
         <h2>Jetzt unverbindlich anfragen.</h2>
@@ -185,6 +186,10 @@
   <div class="float-actions" aria-label="Schnellkontakt">
     <a href="tel:+4917670728179" aria-label="Anrufen">☎</a>
     <a class="wa" href="https://wa.me/4917670728179" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+  </div>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Bild schließen">×</button>
+    <img src="" alt="Vergrößerte Projektansicht">
   </div>
 </body>
 </html>

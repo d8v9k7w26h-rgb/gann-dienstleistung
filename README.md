@@ -1,10 +1,13 @@
-# GANN Website Version 2
+# GANN Website Version 2.1
 
-Fertige Website-Dateien für GitHub Pages.
+Enthalten:
+- kleinerer Hero mit sichtbarer Überschrift
+- stärkere Kontraste
+- modernere Leistungskarten
+- größere Referenzbilder
+- Klick zum Vergrößern
+- sanfte Scroll-Animationen
+- optimierte mobile Darstellung
 
 ## Hochladen
-
-1. `index.html` ersetzen
-2. `style.css` ersetzen
-3. Den Ordner `assets` hochladen bzw. vorhandene Dateien ersetzen
-4. Änderungen in GitHub speichern
+Alle Dateien und den Ordner `assets` in deinem GitHub-Projekt ersetzen.
